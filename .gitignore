@@ -1,0 +1,9 @@
+.kc
+.DS_Store
+.vscode/
+.*.yaml
+otel-demo-generated
+alloy-scenarios
+loki/.data/*
+otel-code-support.png
+trace.png

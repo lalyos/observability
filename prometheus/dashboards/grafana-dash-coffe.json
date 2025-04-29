@@ -1,0 +1,130 @@
+{
+    "id": null,
+    "title": "☕ Coffee Metrics Dashboard",
+    "timezone": "browser",
+    "schemaVersion": 38,
+    "version": 1,
+    "refresh": "5s",
+    "panels": [
+      {
+        "type": "stat",
+        "title": "Total Coffee Cups ☕",
+        "id": 1,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "coffee_cups_total",
+            "legendFormat": "Coffee Cups",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 20
+                },
+                {
+                  "color": "red",
+                  "value": 50
+                }
+              ]
+            }
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "gauge",
+        "title": "Brain CPU Usage 🧠",
+        "id": 2,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "brain_cpu_usage_percent",
+            "legendFormat": "Brain Usage",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "min": 0,
+            "max": 100,
+            "unit": "percent",
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 40
+                },
+                {
+                  "color": "green",
+                  "value": 50
+                }
+              ]
+            }
+          },
+          "overrides": []
+        }
+      },
+      {
+        "type": "time_series",
+        "title": "Coffee Temperature Over Time 🌡️",
+        "id": 3,
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "coffee_temp_celsius",
+            "legendFormat": "Coffee Temp",
+            "refId": "A"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "celsius",
+            "color": {
+              "mode": "palette-classic"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "red",
+                  "value": null
+                },
+                {
+                  "color": "yellow",
+                  "value": 60
+                },
+                {
+                  "color": "green",
+                  "value": 75
+                }
+              ]
+            }
+          },
+          "overrides": []
+        }
+      }
+    ]
+  }
+  
